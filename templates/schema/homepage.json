@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://getdriversed.com/#organization",
+      "name": "Get Drivers Ed",
+      "url": "https://getdriversed.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://getdriversed.com/logo.png",
+        "width": "{{LOGO_WIDTH}}",
+        "height": "{{LOGO_HEIGHT}}"
+      },
+      "description": "{{ORG_DESCRIPTION}}",
+      "sameAs": [
+        "{{FACEBOOK_URL}}",
+        "{{TWITTER_URL}}",
+        "{{INSTAGRAM_URL}}",
+        "{{YOUTUBE_URL}}"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "{{PHONE}}",
+        "contactType": "customer service",
+        "email": "{{EMAIL}}",
+        "availableLanguage": ["English", "Spanish"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://getdriversed.com/#website",
+      "url": "https://getdriversed.com/",
+      "name": "Get Drivers Ed",
+      "publisher": {
+        "@id": "https://getdriversed.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://getdriversed.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}

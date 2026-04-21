@@ -1,0 +1,110 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{PAGE_URL}}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getdriversed.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Courses",
+          "item": "https://getdriversed.com/courses/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{STATE_NAME}} Courses",
+          "item": "https://getdriversed.com/{{STATE_SLUG}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "{{PRIMARY_KEYWORD_TITLE_CASE}}"
+        }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "{{PAGE_URL}}#course",
+      "name": "{{PRIMARY_KEYWORD_TITLE_CASE}}",
+      "description": "{{META_DESCRIPTION_OR_EXPANDED}}",
+      "url": "{{PAGE_URL}}",
+      "provider": {
+        "@type": "Organization",
+        "name": "Get Drivers Ed",
+        "url": "https://getdriversed.com/",
+        "@id": "https://getdriversed.com/#organization"
+      },
+      "courseCode": "{{STATE_ABBR}}-{{COURSE_CODE}}",
+      "educationalLevel": "Beginner",
+      "inLanguage": "en-US",
+      "teaches": "{{STATE_NAME}} driver licensing, traffic laws, safe driving practices",
+      "coursePrerequisites": "{{AGE_REQUIREMENT}}; {{STATE_NAME}} resident",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "PT{{HOURS}}H"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "{{PRICE}}",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "{{PAGE_URL}}"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{PAGE_URL}}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_1}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_1}}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_2}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_2}}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_3}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_3}}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_4}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_4}}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_5}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_5}}"
+          }
+        }
+      ]
+    }
+  ]
+}

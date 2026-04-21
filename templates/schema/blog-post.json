@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{PAGE_URL}}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getdriversed.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getdriversed.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{POST_TITLE}}"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "{{PAGE_URL}}#article",
+      "headline": "{{POST_TITLE_OR_PRIMARY_KW}}",
+      "description": "{{META_DESCRIPTION}}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{HERO_IMAGE_URL}}",
+        "width": "1200",
+        "height": "630"
+      },
+      "datePublished": "{{ISO_DATE_PUBLISHED}}",
+      "dateModified": "{{ISO_DATE_MODIFIED}}",
+      "author": {
+        "@type": "Person",
+        "name": "{{AUTHOR_NAME}}",
+        "url": "{{AUTHOR_PROFILE_URL}}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Get Drivers Ed",
+        "@id": "https://getdriversed.com/#organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getdriversed.com/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{PAGE_URL}}"
+      },
+      "inLanguage": "en-US",
+      "articleSection": "{{CATEGORY}}",
+      "keywords": "{{PRIMARY_KW}}, {{HALO_KW_1}}, {{HALO_KW_2}}, {{HALO_KW_3}}"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{PAGE_URL}}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_1}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_1}}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_2}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_2}}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ_Q_3}}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{FAQ_A_3}}"
+          }
+        }
+      ]
+    }
+  ]
+}

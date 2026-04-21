@@ -1,0 +1,177 @@
+<!--
+  HTML IMPLEMENTATION BLOCK — paste into <head> and <body> of the page.
+  Replace all {{TOKENS}} with optimized values from optimization.md.
+
+  Rendered by Claude for page: {{PAGE_URL}}
+  Primary keyword: {{PRIMARY_KW}}
+  Date: {{DATE}}
+-->
+
+<!-- ============ <head> ============ -->
+
+<title>{{OPTIMIZED_TITLE}}</title>
+<meta name="description" content="{{OPTIMIZED_META_DESCRIPTION}}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{PAGE_URL}}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{OPTIMIZED_TITLE}}">
+<meta property="og:description" content="{{OPTIMIZED_META_DESCRIPTION}}">
+<meta property="og:url" content="{{PAGE_URL}}">
+<meta property="og:site_name" content="Get Drivers Ed">
+<meta property="og:image" content="{{OG_IMAGE_URL}}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{OPTIMIZED_TITLE}}">
+<meta name="twitter:description" content="{{OPTIMIZED_META_DESCRIPTION}}">
+<meta name="twitter:image" content="{{OG_IMAGE_URL}}">
+
+<!-- JSON-LD Schema Stack -->
+<script type="application/ld+json">
+{{JSON_LD_GRAPH_BLOCK}}
+</script>
+
+<!-- ============ <body> ============ -->
+
+<!-- Breadcrumb (visible HTML must match BreadcrumbList schema exactly) -->
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li><a href="https://getdriversed.com/">Home</a></li>
+    <li><a href="https://getdriversed.com/courses/">Courses</a></li>
+    <li><a href="https://getdriversed.com/{{STATE_SLUG}}/">{{STATE_NAME}} Courses</a></li>
+    <li aria-current="page">{{PRIMARY_KEYWORD_TITLE_CASE}}</li>
+  </ol>
+</nav>
+
+<!-- Main content -->
+<main>
+
+  <h1>{{PRIMARY_KEYWORD_TITLE_CASE}}</h1>
+
+  <!-- Promo strips — <p>, NOT <h2> (NP|accel pattern) -->
+  <p class="trust-strip">See What Our Students Are Saying!</p>
+  <p class="promo-strip">Bundle & Save: Enhance Your Learning Experience!</p>
+
+  <section>
+    <h3>Overview</h3>
+    <p>{{OVERVIEW_INTRO_WITH_PRIMARY_KW}}</p>
+    <ul>
+      <li>{{BENEFIT_1}}</li>
+      <li>{{BENEFIT_2}}</li>
+      <li>{{BENEFIT_3}}</li>
+      <li>{{BENEFIT_4}}</li>
+      <li>{{BENEFIT_5}}</li>
+      <li>{{BENEFIT_6}}</li>
+      <li>{{BENEFIT_7}}</li>
+      <li>{{BENEFIT_8}}</li>
+    </ul>
+
+    <h3>Outcomes</h3>
+    <h4>Complete the {{COURSE_NAME}} with Get Drivers Ed</h4>
+    <p>{{OUTCOME_1}}</p>
+
+    <h4>Practice with Your Learner's Permit</h4>
+    <p>{{OUTCOME_2}}</p>
+
+    <h4>Schedule and Pass the Road Test</h4>
+    <p>{{OUTCOME_3}}</p>
+
+    <h4>Submit Required Documentation</h4>
+    <p>{{OUTCOME_4}}</p>
+
+    <h4>Pay the License Fees</h4>
+    <p>{{OUTCOME_5}}</p>
+
+    <h4>Receive Your License</h4>
+    <p>{{OUTCOME_6}}</p>
+
+    <h3>Eligibility</h3>
+    <p>{{ELIGIBILITY_INTRO}}</p>
+  </section>
+
+  <section>
+    <h2>Who Can Take the {{SECONDARY_KW_VARIANT}}?</h2>
+    <ul>
+      <li>{{ELIGIBILITY_1}}</li>
+      <li>{{ELIGIBILITY_2}}</li>
+      <li>{{ELIGIBILITY_3}}</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Shedding More Light on This Course</h2>
+    <p>{{EXPANSION_PARA_1_WITH_LSI_AND_HALOS}}</p>
+    <p>{{EXPANSION_PARA_2}}</p>
+    <p>{{EXPANSION_PARA_3}}</p>
+  </section>
+
+  <section>
+    <h2>Recommended Courses to Enhance Your Learning</h2>
+    <div class="course-grid">
+      <a href="{{RELATED_COURSE_URL_1}}">{{RELATED_COURSE_ANCHOR_1}}</a>
+      <a href="{{RELATED_COURSE_URL_2}}">{{RELATED_COURSE_ANCHOR_2}}</a>
+      <a href="{{RELATED_COURSE_URL_3}}">{{RELATED_COURSE_ANCHOR_3}}</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Your Step-By-Step Guide to Getting Licensed</h2>
+    <h3>1. Sign Up</h3>
+    <p>{{STEP_1}}</p>
+
+    <h3>2. Get Your Learner's Permit</h3>
+    <p>{{STEP_2}}</p>
+
+    <h3>3. Complete Practice Hours & Road Test Prep</h3>
+    <p>{{STEP_3}}</p>
+
+    <h3>4. Earn Your {{STATE_NAME}} Driver's License</h3>
+    <p>{{STEP_4}}</p>
+
+    <p><a href="{{STATE_COURSE_HUB_URL}}" class="cta-button">Review the {{STATE_NAME}} Course</a></p>
+  </section>
+
+  <section>
+    <h2>Why Should You Opt for This Course?</h2>
+    <p>{{WHY_PARA_1_WITH_AUTHORITY_LSI}}</p>
+    <p>{{WHY_PARA_2}}</p>
+  </section>
+
+  <section>
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>{{FAQ_Q_1}}</h3>
+    <p>{{FAQ_A_1}}</p>
+
+    <h3>{{FAQ_Q_2}}</h3>
+    <p>{{FAQ_A_2}}</p>
+
+    <h3>{{FAQ_Q_3}}</h3>
+    <p>{{FAQ_A_3}}</p>
+
+    <h3>{{FAQ_Q_4}}</h3>
+    <p>{{FAQ_A_4}}</p>
+
+    <h3>{{FAQ_Q_5}}</h3>
+    <p>{{FAQ_A_5}}</p>
+  </section>
+
+</main>
+
+<!-- Example image with optimized alt + filename -->
+<!--
+<img 
+  src="/images/{{STATE_SLUG}}-{{COURSE_SLUG}}-hero.webp" 
+  alt="{{IMAGE_ALT_WITH_PRIMARY_KW}}" 
+  width="1200" 
+  height="600" 
+  loading="eager"
+>
+-->
+
+<!-- Example internal link (NP|accel anchor pattern) -->
+<!--
+<a href="{{RELATED_URL}}">Review the {{STATE_NAME}} Course</a>
+-->

@@ -1,0 +1,156 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// LOCAL DEV:    provider = "sqlite"   + DATABASE_URL="file:./prisma/dev.db"
+// RAILWAY PROD: provider = "postgresql" + DATABASE_URL set by Railway automatically
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  role         String    @default("VIEWER")
+  active       Boolean   @default(true)
+  avatarUrl    String?
+  lastLogin    DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  submissions   Submission[]
+  activities    Activity[]
+  assignedPages Page[]       @relation("PageOwner")
+}
+
+model Page {
+  id                 String    @id @default(cuid())
+  url                String    @unique
+  slug               String    @unique
+  primaryKeyword     String
+  secondaryKeywords  String?
+  pageType           String
+  state              String?
+  status             String    @default("QUEUED")
+  scoreBefore        Int?
+  scoreAfter         Int?
+  scoreProjected     Int?
+  wordCountBefore    Int?
+  wordCountAfter     Int?
+  dateOptimized      DateTime?
+  implementationDate DateTime?
+  position30d        Int?
+  position90d        Int?
+  notes              String?
+  folderPath         String
+  ownerId            String?
+  owner              User?     @relation("PageOwner", fields: [ownerId], references: [id])
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  gscSnapshots GSCSnapshot[]
+  history      PageHistory[]
+
+  @@index([status])
+  @@index([state])
+  @@index([ownerId])
+}
+
+model PageHistory {
+  id        String   @id @default(cuid())
+  pageId    String
+  page      Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  userId    String
+  action    String
+  fromValue String?
+  toValue   String?
+  note      String?
+  createdAt DateTime @default(now())
+
+  @@index([pageId, createdAt])
+}
+
+model GSCSnapshot {
+  id          String   @id @default(cuid())
+  pageId      String?
+  page        Page?    @relation(fields: [pageId], references: [id])
+  pageUrl     String
+  date        DateTime
+  query       String
+  impressions Int
+  clicks      Int
+  ctr         Float
+  position    Float
+  createdAt   DateTime @default(now())
+
+  @@unique([pageUrl, date, query])
+  @@index([pageUrl, date])
+  @@index([date])
+}
+
+model GSCDailySummary {
+  id          String   @id @default(cuid())
+  date        DateTime @unique
+  clicks      Int
+  impressions Int
+  ctr         Float
+  position    Float
+  createdAt   DateTime @default(now())
+
+  @@index([date])
+}
+
+model Submission {
+  id              String    @id @default(cuid())
+  url             String
+  primaryKeyword  String?
+  priority        String    @default("MEDIUM")
+  businessContext String?
+  whyThisMatters  String?
+  submittedById   String
+  submittedBy     User      @relation(fields: [submittedById], references: [id])
+  status          String    @default("PENDING")
+  rejectionReason String?
+  createdAt       DateTime  @default(now())
+  processedAt     DateTime?
+
+  @@index([status])
+  @@index([submittedById])
+}
+
+model SitewideIssue {
+  id            Int      @id
+  title         String
+  description   String
+  sprint        Int
+  severity      String
+  effort        String
+  status        String   @default("NOT_STARTED")
+  owner         String?
+  dateStarted   DateTime?
+  dateCompleted DateTime?
+  notes         String?
+  updatedAt     DateTime @updatedAt
+}
+
+model Activity {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  action    String
+  target    String?
+  metadata  String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([userId])
+}
+
+model SystemSettings {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+}

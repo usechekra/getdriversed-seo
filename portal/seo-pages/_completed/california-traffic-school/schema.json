@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getdriversed.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Courses",
+          "item": "https://getdriversed.com/courses/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "California Courses",
+          "item": "https://getdriversed.com/course/online/california"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "California Traffic School Online"
+        }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "California Traffic School Online",
+      "description": "Get Drivers Ed offers California traffic school online, designed for self-paced, mobile-friendly learning to meet DMV requirements. DMV-licensed, 8-hour Traffic Violator School accepted by all California courts.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Get Drivers Ed",
+        "url": "https://getdriversed.com/",
+        "@id": "https://getdriversed.com/#organization"
+      },
+      "courseCode": "CA-TVS-ONLINE",
+      "educationalLevel": "General",
+      "inLanguage": "en-US",
+      "teaches": "California traffic laws, defensive driving techniques, ticket masking process, DUI awareness, hazard identification, distracted driving prevention",
+      "coursePrerequisites": "Valid California driver's license; moving violation infraction; traffic school elected at court; not within 18 months of a prior traffic school completion",
+      "url": "https://getdriversed.com/courses-details/california-traffic-school/en",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "PT8H",
+        "inLanguage": "en-US"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "VALIDATE_PRICE_WITH_GDE",
+        "availability": "https://schema.org/InStock",
+        "url": "https://getdriversed.com/courses-details/california-traffic-school/en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long is California traffic school online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "California traffic school is 8 hours — this is the state-mandated minimum set by the California DMV for Traffic Violator School (TVS). Our California Traffic School Online is entirely self-paced, so you can split the 8 hours across multiple sessions. Most students complete it within 1–3 days. You must finish by the due date set by your court."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does online traffic school mask a ticket in California?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. When you complete Get Drivers Ed's California Traffic School Online and pass the final exam, we submit your Certificate of Completion electronically to the court and the California DMV. The DMV then masks your citation, which means the moving violation will not appear on the driving record viewed by your insurance company. Only one citation can be masked every 18 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often can you take traffic school in California?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "California drivers are eligible to take traffic school once every 18 months. If you received a ticket within 18 months of a previous traffic school completion, you are not eligible to attend again for that new citation. Check with your court to confirm your eligibility before enrolling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is online traffic school accepted by all California courts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Get Drivers Ed is a California DMV-licensed Traffic Violator School, and our online course is accepted by all California Superior Courts. After you complete the course and pass the final exam, we submit your DL 400 C Certificate of Completion directly to your court electronically — no additional steps needed on your end."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the California traffic school certificate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The California traffic school Certificate of Completion is officially called the DL 400 C. It is the document the court and DMV use to confirm you completed a DMV-licensed Traffic Violator School. Get Drivers Ed submits the DL 400 C to your court and the DMV electronically within one business day of you passing the final exam."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I fail the California traffic school final exam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you do not pass the final exam on your first attempt, you have one additional opportunity to retake it. Chapter-level quizzes throughout the course have unlimited retakes, so use them to review before attempting the final. A score of 70% or higher is required to pass and receive your Certificate of Completion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I still have to pay my fine if I take traffic school?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Court fines and traffic school fees are separate. Paying the court's traffic fine (or bail) is a requirement before or alongside electing traffic school — it does not cover the cost of the course itself. The traffic school fee is paid directly to Get Drivers Ed when you enroll."
+          }
+        }
+      ]
+    }
+  ]
+}

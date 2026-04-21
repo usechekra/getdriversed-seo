@@ -1,0 +1,15 @@
+{
+  "url": "https://getdriversed.com/courses-details/california-traffic-school/en",
+  "slug": "california-traffic-school",
+  "primaryKeyword": "California Traffic School Online",
+  "secondaryKeywords": "california traffic school, online traffic school california, CA traffic school, DMV approved traffic school california",
+  "pageType": "state-course-page",
+  "state": "California",
+  "status": "IN_PROGRESS",
+  "scoreBefore": 9,
+  "scoreProjected": 93,
+  "wordCountBefore": 77,
+  "dateOptimized": "2026-04-18",
+  "folderPath": "pages/_completed/california-traffic-school",
+  "notes": "Dev handoff complete. Awaiting implementation. Fill CA DMV TVS license # and pricing in schema before deploying."
+}

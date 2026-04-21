@@ -1,0 +1,148 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getdriversed.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Defensive Driving Courses",
+          "item": "https://getdriversed.com/course/defensive"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Michigan Online Defensive Driving Course",
+          "item": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course"
+        }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course#course",
+      "name": "Michigan Online Defensive Driving Course",
+      "description": "Michigan SOS-approved online defensive driving course (BDIC). Dismiss traffic ticket points, protect your insurance—4 hours, self-paced, any device. Enroll at Get Drivers Ed today.",
+      "url": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course",
+      "courseCode": "MI-BDIC",
+      "educationalLevel": "Beginner",
+      "inLanguage": "en-US",
+      "teaches": "Michigan traffic laws, safe driving practices, BDIC program requirements, crash prevention, OWI awareness, distracted driving prevention",
+      "coursePrerequisites": "Valid non-commercial Michigan driver's license; eligibility letter from Michigan Department of State; 2 or fewer points on driving record",
+      "provider": {
+        "@type": "Organization",
+        "name": "Get Drivers Ed",
+        "url": "https://getdriversed.com/",
+        "@id": "https://getdriversed.com/#organization"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseSchedule": {
+          "@type": "Schedule",
+          "repeatFrequency": "P1D",
+          "startDate": "2026-01-01"
+        },
+        "courseWorkload": "PT4H",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "Michigan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "MI",
+            "addressCountry": "US"
+          }
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course#offer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course",
+        "seller": {
+          "@type": "Organization",
+          "name": "Get Drivers Ed",
+          "@id": "https://getdriversed.com/#organization"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does the Michigan online defensive driving course take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Michigan online defensive driving course takes a minimum of 4 hours to complete, as required by the Michigan Department of State. You can work through the coursework at your own pace — pause and resume any time — using a phone, tablet, or computer. There is no scheduled class time and no in-person attendance required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is eligible for the Michigan Basic Driver Improvement Course (BDIC)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eligibility is determined by the Michigan Department of State, not by Get Drivers Ed. You're eligible if you hold a valid non-commercial Michigan driver's license, have 2 or fewer points on your record, received a qualifying traffic violation, and received a BDIC eligibility letter from the state. You must enroll and complete the course within 60 days of the eligibility notice date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will completing the BDIC remove points from my Michigan driving record?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — if you successfully complete the Michigan BDIC, the Michigan Secretary of State will not add points from your eligible traffic ticket to your driving record. The ticket information will also not be shared with your insurance company. However, you are still responsible for all court fines and fees associated with the original citation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get an insurance discount for taking a Michigan defensive driving course?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many Michigan insurance providers offer discounts when you complete a state-approved defensive driving course — up to 10% in some cases, lasting up to 3 years. The discount amount and eligibility vary by insurer, so contact your insurance company directly to confirm. Completing the BDIC also prevents your ticket from being reported to your insurer, which protects your current rate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if I'm eligible for the Michigan BDIC program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Michigan Department of State will mail you an eligibility letter if you qualify for the BDIC program after receiving a covered traffic violation. That letter will include your deadline (60 days from the notice date) and the infraction that triggered eligibility. If you haven't received a letter but had a recent ticket, contact the Michigan Secretary of State's office to ask about your eligibility status."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Get Drivers Ed's Michigan defensive driving course approved by the state?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Get Drivers Ed is a licensed BDIC course sponsor recognized by the Michigan Department of State. When you complete and pass the course, we electronically notify the Michigan Secretary of State so your record is updated automatically. You don't need to submit any paperwork or visit a state office."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I only take the Michigan BDIC once in my lifetime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Michigan BDIC program for point avoidance is available only once per lifetime. Once you've used the program to dismiss points from a violation, you cannot use it again for future tickets. However, any Michigan driver can take a general defensive driving course (not BDIC-specific) at any time to qualify for insurance discounts or improve their skills."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I don't pass the final exam in the Michigan BDIC course?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you don't pass the final exam on your first attempt, you may be allowed to retake it. However, you must still complete the course within your 60-day eligibility window from your Michigan Department of State notice. Contact Get Drivers Ed's support team immediately if you're approaching your deadline — we can help you navigate your options."
+          }
+        }
+      ]
+    }
+  ]
+}
