@@ -52,3 +52,7 @@ venv/
 .claude/skills/everything-claude-code/
 .claude/skills/marketing-skills/
 .claude/skills/ui-ux-pro-max/
+
+# Service account credentials — never commit, store in Railway env vars
+credentials/gsc-service-account.json
+credentials/*.json
