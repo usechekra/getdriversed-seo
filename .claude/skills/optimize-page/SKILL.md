@@ -378,6 +378,24 @@ The `autoSeedPages()` function in `instrumentation.node.ts` will read the `meta.
 - If `railway` CLI is not found, tell the user to run `railway up --detach` from the `portal/` directory manually
 - Confirm the deploy command succeeded (exit 0) before proceeding to Step 12
 
+### Step 11.9: ⭐ Commit and Push to GitHub — MANDATORY, ALWAYS
+
+After deploying to Railway, commit everything to GitHub so the work is permanently backed up.
+
+```bash
+cd "/Users/elyas/Desktop/SEO Specialist/getdriversed-seo"
+git add .
+git commit -m "Optimize [slug] — [primary keyword] (score: [before] → [projected])"
+git push origin main
+```
+
+Replace `[slug]`, `[primary keyword]`, `[before]`, `[projected]` with the actual values from this optimization.
+
+**Rules:**
+- Run this EVERY time, for EVERY optimization — do not skip
+- If push fails, diagnose (check `git status`, `git remote -v`) and fix before proceeding
+- This is the permanent backup — without this step, work exists only locally
+
 ### Step 12: Summarize for the User
 
 In the chat response, give the user:
