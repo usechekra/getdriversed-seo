@@ -4,5 +4,20 @@
       "command": "npx",
       "args": ["@playwright/mcp@latest"]
     }
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(cd * && git *)",
+      "Bash(railway *)",
+      "Bash(cd * && railway *)",
+      "Bash(python3 scripts/*)",
+      "Bash(python3 - *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(mkdir *)",
+      "Bash(rm -rf portal/seo-pages/*)",
+      "Bash(ls *)"
+    ]
   }
 }
