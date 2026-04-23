@@ -330,11 +330,15 @@ This produces two PDFs in the page folder automatically:
 
 ### Step 11.75: ⭐ Publish to Portal — MANDATORY, ALWAYS
 
-After generating PDFs, publish the page to the Railway portal so it appears in "My Work" automatically. This is not optional — every optimization must be live in the portal after delivery.
+After generating PDFs, publish the page to the Railway portal so it appears in "My Work" automatically. This is not optional — every optimization must be live in the portal after delivery. Also run this step in full whenever ANY change is made to an existing page (e.g. price updated, CTA fixed, content revised).
 
-**Sub-step A: Create `meta.json` in the page folder**
+**Sub-step A: Determine stage and create/update `meta.json`**
 
-Write `pages/[stage]/[slug]/meta.json` with these exact fields (no extras, no missing fields):
+- New optimization → stage is `_in-progress`, status is `"IN_PROGRESS"`
+- When the user says "mark as completed" or "it's done" or "move to completed" → stage is `_completed`, status is `"COMPLETED"`, and move the folder: `mv pages/_in-progress/[slug] pages/_completed/[slug]`
+- Any update to an existing page → keep current stage and status, but always update `lastUpdated` to today's date
+
+Write `pages/[stage]/[slug]/meta.json`:
 
 ```json
 {
@@ -344,26 +348,31 @@ Write `pages/[stage]/[slug]/meta.json` with these exact fields (no extras, no mi
   "secondaryKeywords": "[comma-separated list from keyword-cluster.md]",
   "pageType": "state-course-page",
   "state": "[State name or null]",
-  "status": "IN_PROGRESS",
+  "status": "IN_PROGRESS | COMPLETED | QUEUED",
   "scoreBefore": [number from score.md],
   "scoreProjected": [number from score.md],
   "wordCountBefore": [number from current-state.md],
-  "dateOptimized": "[YYYY-MM-DD today]",
+  "dateOptimized": "[YYYY-MM-DD]",
+  "lastUpdated": "[YYYY-MM-DD today — always set to today on every change]",
   "folderPath": "pages/[stage]/[slug]",
-  "notes": "[one-line summary of what was done]"
+  "notes": "[one-line summary of what was done or changed]"
 }
 ```
 
-Status values: `"IN_PROGRESS"` for `_in-progress/`, `"COMPLETED"` for `_completed/`, `"QUEUED"` for `_inbox/`.
+**Sub-step B: Sync ALL files to `portal/seo-pages/`**
 
-**Sub-step B: Copy entire page folder to `portal/seo-pages/`**
+If status changed from IN_PROGRESS → COMPLETED, first remove the old in-progress folder from portal:
+```bash
+rm -rf portal/seo-pages/_in-progress/[slug]
+```
 
+Then copy the full folder (including PDFs, all .md files, schema.json, implementation.html, meta.json):
 ```bash
 mkdir -p portal/seo-pages/[stage]/[slug]
 cp -r pages/[stage]/[slug]/. portal/seo-pages/[stage]/[slug]/
 ```
 
-This makes the files accessible via the Railway files API. Without this step, files exist locally but are never deployed — the portal shows empty tabs.
+Every file must be in `portal/seo-pages/` — the portal's Files tab, Reports tab, and SEO Reference all read from here. Missing files = empty tabs in the portal.
 
 **Sub-step C: Deploy to Railway**
 
@@ -371,12 +380,13 @@ This makes the files accessible via the Railway files API. Without this step, fi
 cd portal && railway up --detach && cd ..
 ```
 
-The `autoSeedPages()` function in `instrumentation.node.ts` will read the `meta.json` on startup and automatically upsert the page into the database — no manual API call needed.
+On startup, `autoSeedPages()` in `instrumentation.node.ts` reads `meta.json` and upserts the page into the database with the current status, lastUpdated, and all fields. The portal's "My Work" list and page detail will reflect the changes automatically.
 
 **Rules:**
-- Run this EVERY time, for EVERY optimization — do not skip
+- Run this EVERY time, for EVERY optimization AND every update — do not skip
+- Run in full even for small changes (price fix, copy tweak, status change) — the portal only reflects what's deployed
 - If `railway` CLI is not found, tell the user to run `railway up --detach` from the `portal/` directory manually
-- Confirm the deploy command succeeded (exit 0) before proceeding to Step 12
+- Confirm deploy command succeeded (exit 0) before proceeding to Step 11.9
 
 ### Step 11.9: ⭐ Commit and Push to GitHub — MANDATORY, ALWAYS
 
