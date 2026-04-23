@@ -305,7 +305,6 @@ Add these internal links to the page body. Use exact anchor text.
 | 2 | Michigan drivers ed course | /course/online-drivers-ed/michigan | "Why GDE" section — for teen drivers cross-sell |
 | 3 | defensive driving course overview | /blog-details/defensive-driving-course-overview | "Why GDE" section — informational callout |
 | 4 | online vs in-person defensive driving | /blog-details/online-defensive-driving-vs-in-person | "Why GDE" section — research-stage users |
-| 5 | Michigan Online Defensive Driving Course | /courses-details/michigan-online-defensive-driving-course | CTA button text in Step 2 of enrollment guide |
 
 **Rules:**
 - NO external links on this page
@@ -356,6 +355,7 @@ Paste the full contents of `schema.json` into a single `<script type="applicatio
       "offers": {
         "@type": "Offer",
         "@id": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course#offer",
+        "price": "36.99",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "url": "https://getdriversed.com/courses-details/michigan-online-defensive-driving-course",
